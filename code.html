@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            margin: 0;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .main-container {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            padding: 20px;
+            box-sizing: border-box;
+            color: white;
+            overflow-y: auto;
+        }
+        .sidebar .dropdown {
+            cursor: pointer;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .sidebar .dropdown-title {
+            padding: 10px;
+            background-color: #444;
+            border: none;
+            text-align: left;
+            width: 100%;
+            color: white;
+        }
+        .sidebar .dropdown-content {
+            display: none;
+            flex-direction: column;
+            margin-left: 20px;
+        }
+        .sidebar .dropdown-content a {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+        .sidebar .dropdown-content a:hover, .sidebar .dropdown-content a.active {
+            background-color: #575757;
+        }
+        .sidebar .dropdown.show .dropdown-content {
+            display: flex;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+        }
+        .content img {
+            max-width: 100%;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="sidebar">
+            <!-- Dropdowns for each menu -->
+            <div class="dropdown">
+                <button class="dropdown-title" onclick="toggleDropdown(this)">C</button>
+                <div class="dropdown-content">
+                    <a href="#" data-index="0" onclick="showImage(0, this)">Introduction to Programming</a>
+                    <a href="#" data-index="1" onclick="showImage(1, this)">Introduction to C</a>
+                    <a href="#" data-index="2" onclick="showImage(2, this)">Decision Control & Loops</a>
+                    <a href="#" data-index="3" onclick="showImage(3, this)">Functions</a>
+                    <a href="#" data-index="4" onclick="showImage(4, this)">Array</a>
+                    <a href="#" data-index="5" onclick="showImage(5, this)">String</a>
+                    <a href="#" data-index="6" onclick="showImage(6, this)">Pointer</a>
+                    <a href="#" data-index="7" onclick="showImage(7, this)">User Defined Data Types</a>
+                    <a href="#" data-index="8" onclick="showImage(8, this)">Files</a>
+                    <a href="#" data-index="9" onclick="showImage(9, this)">Preprocessor Directive</a>
+                    <a href="#" data-index="10" onclick="showImage(10, this)">Misceleneous</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdown-title" onclick="toggleDropdown(this)">JAVA</button>
+                <div class="dropdown-content">
+                    <a href="#" data-index="11" onclick="showImage(11, this)">1. Java Basics</a>
+                    <a href="#" data-index="12" onclick="showImage(12, this)">2 Java OOPS.png</a>
+                    <a href="#" data-index="13" onclick="showImage(13, this)">3. Java Inheritance</a>
+                    <a href="#" data-index="14" onclick="showImage(14, this)">4. Java Static</a>
+                    <a href="#" data-index="15" onclick="showImage(15, this)">5. Method Overloading & Overriding</a>
+                    <a href="#" data-index="16" onclick="showImage(16, this)">6. Polymorphism</a>
+                    <a href="#" data-index="17" onclick="showImage(17, this)">7. Abstraction</a>
+                    <a href="#" data-index="18" onclick="showImage(18, this)">8. Final</a>
+                    <a href="#" data-index="19" onclick="showImage(19, this)">9 Package</a>
+                    <a href="#" data-index="20" onclick="showImage(20, this)">10. Internationalization</a>
+                    <a href="#" data-index="21" onclick="showImage(21, this)">11. Serilization</a>
+                    <a href="#" data-index="22" onclick="showImage(22, this)">12. Reflection</a>
+                    <a href="#" data-index="23" onclick="showImage(23, this)">13. Garbage Collection</a>
+                    <a href="#" data-index="24" onclick="showImage(24, this)">14 Inner Class</a>
+                    <a href="#" data-index="25" onclick="showImage(25, this)">15. String</a>
+                    <a href="#" data-index="26" onclick="showImage(26, this)">16. Exception Handling</a>
+                    <a href="#" data-index="27" onclick="showImage(27, this)">17.A. Multi-Thread</a>
+                    <a href="#" data-index="28" onclick="showImage(28, this)">17.B. Multi-Thread.png</a>
+                    <a href="#" data-index="29" onclick="showImage(29, this)">17.C. Multi-Thread.png</a>
+                    <a href="#" data-index="30" onclick="showImage(30, this)">18.A.Collection Framework</a>
+                    <a href="#" data-index="31" onclick="showImage(31, this)">18.B.Collection Framework</a>
+                    <a href="#" data-index="32" onclick="showImage(32, this)">18.C.Collection Framework</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdown-title" onclick="toggleDropdown(this)">DBMS</button>
+                <div class="dropdown-content">
+                    <a href="#" data-index="33" onclick="showImage(33, this)">Submenu 3.1</a>
+                    <a href="#" data-index="34" onclick="showImage(34, this)">Submenu 3.2</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdown-title" onclick="toggleDropdown(this)">Most Asked SQL Questions</button>
+                <div class="dropdown-content">
+                    <a href="#" data-index="35" onclick="showImage(35, this)">1</a>
+                    <a href="#" data-index="36" onclick="showImage(36, this)">2</a>
+                    <a href="#" data-index="37" onclick="showImage(37, this)">3</a>
+                    <a href="#" data-index="38" onclick="showImage(38, this)">4</a>
+                    <a href="#" data-index="39" onclick="showImage(39, this)">5</a>
+                    <a href="#" data-index="40" onclick="showImage(40, this)">6</a>
+                    <a href="#" data-index="41" onclick="showImage(41, this)">7</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdown-title" onclick="toggleDropdown(this)">HR</button>
+                <div class="dropdown-content">
+                    <a href="#" data-index="42" onclick="showImage(42, this)">Submenu 5.1</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdown-title" onclick="toggleDropdown(this)">Menu 6</button>
+                <div class="dropdown-content">
+                    <a href="#" data-index="43" onclick="showImage(43, this)">Submenu 6.1</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdown-title" onclick="toggleDropdown(this)">Menu 7</button>
+                <div class="dropdown-content">
+                    <a href="#" data-index="44" onclick="showImage(44, this)">Submenu 7.1</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdown-title" onclick="toggleDropdown(this)">Menu 8</button>
+                <div class="dropdown-content">
+                    <a href="#" data-index="45" onclick="showImage(45, this)">Submenu 8.1</a>
+                    <a href="#" data-index="46" onclick="showImage(46, this)">Submenu 8.2</a>
+                    <a href="#" data-index="47" onclick="showImage(47, this)">Submenu 8.3</a>
+                    <a href="#" data-index="48" onclick="showImage(48, this)">Submenu 8.4</a>
+                    <a href="#" data-index="49" onclick="showImage(49, this)">Submenu 8.5</a>
+                    <a href="#" data-index="50" onclick="showImage(50, this)">Submenu 8.6</a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <img id="displayImage" src="C/1.png" alt="Image">
+            <div class="buttons">
+                <button onclick="previousImage()">Previous</button>
+                <button onclick="nextImage()">Next</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const images = [
+            'C/1.png', 'C/2.png', 'C/3.png', 'C/4.png', 'C/5.png', 'C/6.png', 'C/7.png',
+            'C/8.png', 'C/9.png', 'C/10.png', 'C/11.png', 'JAVA/12.png', 'JAVA/13.png', 'JAVA/14.png',
+            'JAVA/15.png', 'JAVA/16.png', 'JAVA/17.png', 'JAVA/18.png', 'JAVA/19.png', 'JAVA/20.png', 'JAVA/21.png',
+            'JAVA/22.png', 'JAVA/23.png', 'JAVA/24.png', 'JAVA/25.png', 'JAVA/26.png', 'JAVA/27.png', 'JAVA/28A.png',
+            'JAVA/28B.png', 'JAVA/28C.png', 'JAVA/29A.png', 'JAVA/29B.png', 'JAVA/29C.png', 'DBMS/DBMS.png', 'DBMS/SQL.png',
+            'Most Asked SQL Questions/1.png', 'Most Asked SQL Questions/2.png', 'Most Asked SQL Questions/3.png', 'Most Asked SQL Questions/4.png', 'Most Asked SQL Questions/5.png', 'Most Asked SQL Questions//6.png', 'Most Asked SQL Questions/7.png',
+            'HR-Question Answers.png', '44.png', '45.png', '46.png', '47.png', '48.png', '49.png',
+            '50.png', '51.png'
+        ];
+
+        let currentIndex = 0;
+
+        function showImage(index, element) {
+            currentIndex = index;
+            document.getElementById('displayImage').src = images[index];
+            document.querySelectorAll('.sidebar .dropdown-content a').forEach(a => a.classList.remove('active'));
+            element.classList.add('active');
+            window.scrollTo(0, 0); // Scroll to top
+        }
+
+        function updateActiveLink() {
+            document.querySelectorAll('.sidebar .dropdown-content a').forEach(a => a.classList.remove('active'));
+            document.querySelector(`.sidebar .dropdown-content a[data-index='${currentIndex}']`).classList.add('active');
+            window.scrollTo(0, 0); // Scroll to top
+        }
+
+        function previousImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            document.getElementById('displayImage').src = images[currentIndex];
+            updateActiveLink();
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById('displayImage').src = images[currentIndex];
+            updateActiveLink();
+        }
+
+        function toggleDropdown(button) {
+            const dropdown = button.parentElement;
+            dropdown.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
